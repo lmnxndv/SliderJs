@@ -14,6 +14,10 @@ function autoSlide(){
   interval= setInterval(nextSlide,4000)
 }
 
+function stopInterval(){
+  clearInterval(interval) 
+}
+
 window.addEventListener("load", () => {
   autoSlide();
 });
@@ -26,6 +30,7 @@ function nextSlide() {
   }
   sliderCount++;
   thisSlide(sliderCount);
+  stopInterval()
 }
 
 function prevSlide() {
@@ -36,6 +41,7 @@ function prevSlide() {
   }
   sliderCount--;
   thisSlide(sliderCount);
+  stopInterval()
 }
 
 function thisSlide(index) {
